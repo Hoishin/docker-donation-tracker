@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  django:
+    build: ..
+    environment:
+      SECRET_KEY: supersecretkey
+      WORKERS: 2
+      PORT: 8000
+      SITE_DOMAIN: tracker.example.com
+    volumes:
+      - static:/var/www/static
+      - db:/donations/db
+  nginx:
+    image: nginx:1.15.12-alpine
+    volumes:
+      - static:/var/www/static
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./fonts:/var/www/static/res/fonts
+    ports:
+      - 8000:8000
+    depends_on:
+      - django
+
+volumes:
+  static:
+  db:
