@@ -11,3 +11,7 @@ docker build .
 ## Usage
 
 Refer to [example](https://github.com/Hoishin/docker-donation-tracker/tree/master/example) for usage and required environment variables.
+
+## License
+
+MIT &copy; Keiichiro Amemiya (Hoishin)
