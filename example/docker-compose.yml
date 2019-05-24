@@ -2,7 +2,7 @@ version: "3"
 
 services:
   django:
-    build: ..
+    image: hoishin/donation-tracker
     environment:
       SECRET_KEY: supersecretkey
       WORKERS: 2
