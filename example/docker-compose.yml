@@ -12,7 +12,7 @@ services:
       - static:/var/www/static
       - db:/donations/db
   nginx:
-    image: nginx:1.17.5-alpine
+    image: nginx:1.17.6-alpine
     volumes:
       - static:/var/www/static
       - ./nginx.conf:/etc/nginx/nginx.conf
